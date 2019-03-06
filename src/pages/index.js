@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link, StaticQuery, graphql } from 'gatsby';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import Image from '../components/image';
+import SEO from '../components/seo';
 
 const IndexPage = () => (
   <Layout>
@@ -15,7 +15,35 @@ const IndexPage = () => (
       <Image />
     </div>
     <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
 
-export default IndexPage
+    {/* <StaticQuery
+      query={graphql`
+        query {
+          allTracksJson {
+            edges {
+              node {
+                lyrics
+              }
+            }
+          }
+        }
+      `}
+      render={({ allTracksJson }) => {
+        return (
+          <div
+            style={{
+              whiteSpace: 'pre-line',
+            }}
+          >
+            {allTracksJson.edges.map(({ node }) => {
+              return node.lyrics;
+              // return node.lyrics.split("\n")
+            })}
+          </div>
+        );
+      }}
+    /> */}
+  </Layout>
+);
+
+export default IndexPage;

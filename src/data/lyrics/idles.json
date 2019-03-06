@@ -1,0 +1,19 @@
+[
+  {
+    "id": "2",
+    "name": "Idles",
+    "slug": "idles",
+    "tracks": [
+      {
+        "title": "Colossus",
+        "slug": "colossus",
+        "lyrics": "I'M LIKE STONE COLD STEVE AUSTIN \n I PUT HOMOPHOBES IN COFFINS"
+      },
+      {
+        "title": "Television",
+        "slug": "television",
+        "lyrics": "goes and it goes and it goes"
+      }
+    ]
+  }
+]

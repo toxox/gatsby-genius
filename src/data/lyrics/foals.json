@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1",
+    "name": "Foals",
+    "slug": "foals",
+    "tracks": [
+      {
+        "title": "a",
+        "slug": "testing1",
+        "lyrics": "WHATUP  \n THIS IS A TEST HHHHHHEEEEEEEEEEEEEEEEYYYYYYYYYYYY"
+      },
+      {
+        "title": "b",
+        "slug": "testing2",
+        "lyrics": "I've calmed down now"
+      }
+    ]
+  }
+]
