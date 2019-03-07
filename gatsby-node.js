@@ -1,5 +1,4 @@
 const path = require(`path`);
-const { makeSlug } = require('./utils');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -16,7 +15,13 @@ exports.createPages = async ({ graphql, actions }) => {
             slug
             tracks {
               slug
+              title
               lyrics
+              annotations {
+                id
+                range
+                text
+              }
             }
           }
         }
