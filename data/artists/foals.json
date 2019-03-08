@@ -7,12 +7,12 @@
       {
         "title": "a",
         "slug": "testing1",
-        "lyrics": "WHATUP\nTHIS IS A TEST HHHHHHEEEEEEEEEEEEEEEEYYYYYYYYYYYY"
+        "lyricsFile": "idles-television.md"
       },
       {
         "title": "b",
         "slug": "testing2",
-        "lyrics": "I've calmed down now"
+        "lyricsFile": "idles-television.md"
       }
     ]
   }

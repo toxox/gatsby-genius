@@ -30,16 +30,24 @@ module.exports = {
     {
       resolve: `gatsby-transformer-json`,
       options: {
-        typeName: `Lyrics`,
+        typeName: `Artists`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./data/artists`,
+        name: `Artists`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `./data/lyrics`,
-        name: `Lyrics`,
+        name: 'markdown-pages',
       },
     },
+    `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',

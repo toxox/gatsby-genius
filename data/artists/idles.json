@@ -1,0 +1,53 @@
+[
+  {
+    "id": "2",
+    "name": "Idles",
+    "slug": "idles",
+    "tracks": [
+      {
+        "title": "Colossus",
+        "slug": "colossus",
+        "lyricsFile": "idles-colossus.md",
+        "annotations": [
+          {
+            "id": 1,
+            "range": "The world's best bulimic bartend",
+            "text": "Before his success with Idles, Joe worked as a bartender in Bristol."
+          },
+          {
+            "id": 2,
+            "range": "I am my father's son\r\nHis shadow weighs a tonne",
+            "text": "Joe details his relationship with his father in an interview with GlasgowLive. Joe talks about his father – sculptor Nigel Talbot – in a positive manner, despite what this line insinuates."
+          },
+          {
+            "id": 3,
+            "range": "I'm like Stone Cold Steve Austin",
+            "text": "Steve Austin, better known by the ring name “Stone Cold” Steve Austin, is an American retired professional wrestler, actor, and television host."
+          },
+          {
+            "id": 4,
+            "range": "I put homophobes in coffins",
+            "text": "Steve Austin has formerly commented on same sex marriage with the following quote:\n\n“I’m for same-sex marriage. I believe that any human being in America, any human being in the world, that wants to be married…if it’s the same-sex, more power to them.”"
+          }
+        ]
+      },
+      {
+        "title": "Television",
+        "slug": "television",
+        "lyricsFile": "idles-television.md",
+        "annotations": [
+          {
+            "id": 1,
+            "range": "I go outside and I feel free\r\n'Cause I smash mirrors and fuck TV",
+            "text": "test annotation goes and it goes and it goes"
+          },
+          {
+            "id": 2,
+            "range": "the weekend lasted twenty years",
+            "text": "I don't know what this means"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -6,7 +6,6 @@ export default ({ pageContext: { artist, track } }) => {
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClick);
-
     return () => {
       document.removeEventListener('mousedown', handleClick);
     };
@@ -21,7 +20,9 @@ export default ({ pageContext: { artist, track } }) => {
         <AnnotationMark
           key={match + i}
           selected={annotationId === id}
-          onClick={() => setAnnotation(id)}
+          onClick={() => {
+            annotationId !== id && setAnnotation(id);
+          }}
         >
           {range}
         </AnnotationMark>
@@ -30,7 +31,8 @@ export default ({ pageContext: { artist, track } }) => {
   });
 
   const handleClick = e => {
-    if (!e.target.dataset.annotation) {
+    const { annotationMark, annotationPanel } = e.target.dataset;
+    if (!annotationMark && !annotationPanel) {
       setAnnotation(null);
     }
   };
@@ -46,7 +48,7 @@ export default ({ pageContext: { artist, track } }) => {
       </h2>
       <div>{annotatedLyrics}</div>
       {annotationId && (
-        <div>
+        <div data-annotation-panel>
           <h2>Annotation</h2>
           {annotations.find(annotation => annotation.id === annotationId).text}
         </div>
@@ -58,7 +60,7 @@ export default ({ pageContext: { artist, track } }) => {
 const AnnotationMark = props => {
   return (
     <span
-      data-annotation
+      data-annotation-mark
       style={{
         color: 'blue',
         backgroundColor: props.selected ? 'yellow' : 'white',

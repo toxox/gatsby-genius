@@ -4,10 +4,10 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const {
-    data: { allLyrics },
+    data: { allArtists },
   } = await graphql(`
     query {
-      allLyrics {
+      allArtists {
         edges {
           node {
             id
@@ -16,7 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
             tracks {
               slug
               title
-              lyrics
+              lyricsFile
               annotations {
                 id
                 range
@@ -29,24 +29,52 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  allLyrics.edges.forEach(({ node: artist }) => {
-    createPage({
-      path: artist.slug,
-      component: path.resolve(`./src/templates/artist.js`),
-      context: {
-        artist,
-      },
-    });
-
-    artist.tracks.forEach(track => {
-      createPage({
-        path: `${artist.slug}/${track.slug}`,
-        component: path.resolve(`./src/templates/track.js`),
+  let pagePromises = [];
+  allArtists.edges.forEach(async ({ node: artist }) => {
+    pagePromises.push(
+      await createPage({
+        path: artist.slug,
+        component: path.resolve(`./src/templates/artist.js`),
         context: {
           artist,
-          track,
         },
-      });
+      })
+    );
+
+    artist.tracks.forEach(async track => {
+      const {
+        data: { markdownRemark },
+      } = await graphql(
+        `
+          query($pathName: String) {
+            markdownRemark(fileAbsolutePath: { eq: $pathName }) {
+              rawMarkdownBody
+            }
+          }
+        `,
+        {
+          pathName: `${__dirname.replace(/\\/g, '/')}/data/lyrics/${
+            track.lyricsFile
+          }`,
+        }
+      );
+
+      pagePromises.push(
+        await createPage({
+          path: `${artist.slug}/${track.slug}`,
+          component: path.resolve(`./src/templates/track.js`),
+          context: {
+            artist,
+            track,
+            track: {
+              ...track,
+              lyrics: markdownRemark.rawMarkdownBody,
+            },
+          },
+        })
+      );
     });
   });
+
+  await Promise.all([pagePromises]);
 };
