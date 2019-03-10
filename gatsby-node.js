@@ -16,6 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
             tracks {
               slug
               title
+              description
               lyricsFile
               annotations {
                 id
@@ -62,7 +63,7 @@ exports.createPages = async ({ graphql, actions }) => {
       pagePromises.push(
         await createPage({
           path: `${artist.slug}/${track.slug}`,
-          component: path.resolve(`./src/templates/track.js`),
+          component: path.resolve(`./src/templates/Track/index.js`),
           context: {
             artist,
             track,

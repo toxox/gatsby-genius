@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import reactStringReplace from 'react-string-replace';
-import Layout from '../components/layout';
+import styled from '@emotion/styled';
+
+import Layout from '../../components/layout';
+import AnnotationMark from './components/AnnotationMark';
+import AnnotationPanel from './components/AnnotationPanel';
+
+const TrackContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`;
 
 export default ({ pageContext: { artist, track } }) => {
-  const [annotationId, setAnnotation] = useState(null);
+  const [annotation, setAnnotation] = useState({ id: null, offset: 0 });
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClick);
@@ -20,9 +29,10 @@ export default ({ pageContext: { artist, track } }) => {
       return (
         <AnnotationMark
           key={match + i}
-          selected={annotationId === id}
-          onClick={() => {
-            annotationId !== id && setAnnotation(id);
+          selected={annotation.id === id}
+          onClick={e => {
+            if (annotation.id === id) return;
+            setAnnotation({ id: id, offset: e.nativeEvent.offsetY });
           }}
         >
           {range}
@@ -34,7 +44,7 @@ export default ({ pageContext: { artist, track } }) => {
   const handleClick = e => {
     const { annotationMark, annotationPanel } = e.target.dataset;
     if (!annotationMark && !annotationPanel) {
-      setAnnotation(null);
+      setAnnotation({ id: null, offset: 0 });
     }
   };
 
@@ -53,32 +63,18 @@ export default ({ pageContext: { artist, track } }) => {
             </a>
           </h2>
         </header>
-        <div>{annotatedLyrics}</div>
-        {annotationId && (
-          <div data-annotation-panel>
-            <h2>Annotation</h2>
-            {
-              annotations.find(annotation => annotation.id === annotationId)
-                .text
-            }
-          </div>
-        )}
+        <TrackContainer>
+          <div>{annotatedLyrics}</div>
+          {annotation.id ? (
+            <AnnotationPanel
+              text={annotations.find(({ id }) => id === annotation.id).text}
+              offset={annotation.offset}
+            />
+          ) : (
+            <div>{track.description}</div>
+          )}
+        </TrackContainer>
       </div>
     </Layout>
-  );
-};
-
-const AnnotationMark = props => {
-  return (
-    <span
-      data-annotation-mark
-      style={{
-        color: 'blue',
-        backgroundColor: props.selected ? 'yellow' : 'white',
-      }}
-      {...props}
-    >
-      {props.children}
-    </span>
   );
 };

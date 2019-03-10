@@ -2,10 +2,7 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 import { FaGithub } from 'react-icons/fa';
-
-const HeaderContainer = styled.header``;
 
 const LogoContainer = styled.div`
   background: #ffff64;
@@ -39,7 +36,7 @@ const MenuLink = styled.div`
 `;
 
 const Header = ({ siteTitle }) => (
-  <HeaderContainer>
+  <header>
     <LogoContainer>
       <Link to="/">{siteTitle}</Link>
     </LogoContainer>
@@ -53,7 +50,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </MenuLink>
     </Menu>
-  </HeaderContainer>
+  </header>
 );
 
 Header.propTypes = {
