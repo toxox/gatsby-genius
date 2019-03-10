@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import reactStringReplace from 'react-string-replace';
+import Layout from '../components/layout';
 
 export default ({ pageContext: { artist, track } }) => {
   const [annotationId, setAnnotation] = useState(null);
@@ -38,22 +39,32 @@ export default ({ pageContext: { artist, track } }) => {
   };
 
   return (
-    <div
-      style={{
-        whiteSpace: 'pre-line',
-      }}
-    >
-      <h2>
-        {title} by {artist.name}
-      </h2>
-      <div>{annotatedLyrics}</div>
-      {annotationId && (
-        <div data-annotation-panel>
-          <h2>Annotation</h2>
-          {annotations.find(annotation => annotation.id === annotationId).text}
-        </div>
-      )}
-    </div>
+    <Layout>
+      <div
+        style={{
+          whiteSpace: 'pre-line',
+        }}
+      >
+         
+        <header>
+          <h2>
+            <a href="test">
+              {title} by {artist.name}
+            </a>
+          </h2>
+        </header>
+        <div>{annotatedLyrics}</div>
+        {annotationId && (
+          <div data-annotation-panel>
+            <h2>Annotation</h2>
+            {
+              annotations.find(annotation => annotation.id === annotationId)
+                .text
+            }
+          </div>
+        )}
+      </div>
+    </Layout>
   );
 };
 
