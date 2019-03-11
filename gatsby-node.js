@@ -74,8 +74,6 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       );
 
-      console.log(JSON.stringify(track));
-
       pagePromises.push(
         await createPage({
           path: `${artist.slug}/${track.slug}`,
@@ -86,7 +84,7 @@ exports.createPages = async ({ graphql, actions }) => {
             track: {
               ...track,
               lyrics: lyrics.rawMarkdownBody,
-              coverArt: coverArt.childImageSharp.fluid,
+              coverArt: coverArt ? coverArt.childImageSharp.fluid : null,
             },
           },
         })

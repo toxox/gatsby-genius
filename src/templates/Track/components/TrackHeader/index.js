@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 
+import Image from '../../../../common/Image';
 import theme from '../../../../utils/theme';
 
 const Wrapper = styled.div`
@@ -39,13 +39,7 @@ const TrackHeader = ({ coverArt, track, artist }) => {
   return (
     <Wrapper>
       <Container>
-        <Img
-          fluid={coverArt}
-          style={{
-            maxWidth: '220px',
-            outline: '0.15rem solid #9a9a9a',
-          }}
-        />
+        <Image src={coverArt} />
         <TitleContainer>
           <h2>{track.title}</h2>
           <h3>
