@@ -18,6 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
               title
               description
               lyricsFile
+              coverArtFile
               annotations {
                 id
                 range
@@ -44,21 +45,36 @@ exports.createPages = async ({ graphql, actions }) => {
 
     artist.tracks.forEach(async track => {
       const {
-        data: { markdownRemark },
+        data: { lyrics, coverArt },
       } = await graphql(
         `
-          query($pathName: String) {
-            markdownRemark(fileAbsolutePath: { eq: $pathName }) {
+          query($lyricsPath: String, $coverArtFileName: String) {
+            lyrics: markdownRemark(fileAbsolutePath: { eq: $lyricsPath }) {
               rawMarkdownBody
+            }
+
+            coverArt: file(relativePath: { eq: $coverArtFileName }) {
+              childImageSharp {
+                fluid(maxWidth: 220) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
             }
           }
         `,
         {
-          pathName: `${__dirname.replace(/\\/g, '/')}/data/lyrics/${
+          lyricsPath: `${__dirname.replace(/\\/g, '/')}/data/lyrics/${
             track.lyricsFile
           }`,
+          coverArtFileName: track.coverArtFile,
         }
       );
+
+      console.log(JSON.stringify(track));
 
       pagePromises.push(
         await createPage({
@@ -69,7 +85,8 @@ exports.createPages = async ({ graphql, actions }) => {
             track,
             track: {
               ...track,
-              lyrics: markdownRemark.rawMarkdownBody,
+              lyrics: lyrics.rawMarkdownBody,
+              coverArt: coverArt.childImageSharp.fluid,
             },
           },
         })

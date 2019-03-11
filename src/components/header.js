@@ -4,8 +4,10 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { FaGithub } from 'react-icons/fa';
 
+import theme from '../utils/theme';
+
 const LogoContainer = styled.div`
-  background: #ffff64;
+  background: ${theme.primaryColor};
   margin: 0 auto;
   padding: 0.25rem 0;
   text-align: center;
@@ -13,7 +15,7 @@ const LogoContainer = styled.div`
     font-size: 1.15rem;
     text-transform: uppercase;
     letter-spacing: 8px;
-    color: #ffff64;
+    color: ${theme.primaryColor};
     text-shadow: -2px 2px 1px #000, -3px 2px 1px #000;
   }
 `;
@@ -30,7 +32,7 @@ const MenuLink = styled.div`
     color: #ffffff;
     text-transform: uppercase;
     &:hover {
-      color: #ffff64;
+      color: ${theme.primaryColor};
     }
   }
 `;
@@ -45,9 +47,9 @@ const Header = ({ siteTitle }) => (
         <Link to="/">Home</Link>
       </MenuLink>
       <MenuLink>
-        <Link to="/">
+        <a href="https://github.com/toxox/gatsby-genius" target="_blank">
           <FaGithub size="1.15rem" />
-        </Link>
+        </a>
       </MenuLink>
     </Menu>
   </header>

@@ -7,11 +7,13 @@
       {
         "title": "a",
         "slug": "testing1",
+        "coverArtFile": "idles-colossus.jpg",
         "lyricsFile": "idles-television.md"
       },
       {
         "title": "b",
         "slug": "testing2",
+        "coverArtFile": "idles-colossus.jpg",
         "lyricsFile": "idles-television.md"
       }
     ]

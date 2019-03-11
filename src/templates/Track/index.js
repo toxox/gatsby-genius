@@ -5,8 +5,10 @@ import styled from '@emotion/styled';
 import Layout from '../../components/layout';
 import AnnotationMark from './components/AnnotationMark';
 import AnnotationPanel from './components/AnnotationPanel';
+import TrackHeader from './components/TrackHeader';
 
 const TrackContainer = styled.div`
+  padding-top: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 `;
@@ -55,14 +57,7 @@ export default ({ pageContext: { artist, track } }) => {
           whiteSpace: 'pre-line',
         }}
       >
-         
-        <header>
-          <h2>
-            <a href="test">
-              {title} by {artist.name}
-            </a>
-          </h2>
-        </header>
+        <TrackHeader coverArt={track.coverArt} track={track} artist={artist} />
         <TrackContainer>
           <div>{annotatedLyrics}</div>
           {annotation.id ? (
