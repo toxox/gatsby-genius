@@ -1,20 +1,17 @@
 [
   {
-    "id": "1",
-    "name": "Foals",
-    "slug": "foals",
-    "image": {
-      "src": "../cover-art/foals.jpg"
-    },
+    "id": "3",
+    "name": "Queens of the Stone age",
+    "slug": "queens-of-the-stone-age",
     "tracks": [
       {
         "title": "a",
-        "slug": "testing1",
+        "slug": "testing3",
         "lyricsFile": "idles-television.md"
       },
       {
         "title": "b",
-        "slug": "testing2",
+        "slug": "testing4",
         "lyricsFile": "idles-television.md"
       }
     ]

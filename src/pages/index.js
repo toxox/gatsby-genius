@@ -1,48 +1,67 @@
 import React from 'react';
-import { Link, StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
+import Card from '../common/Card';
+import styled from '@emotion/styled';
+
+const HomeGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 220px);
+  grid-gap: 1em 4em;
+  justify-content: center;
+  padding-top: 1rem;
+`;
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-
-    {/* <StaticQuery
+    <StaticQuery
       query={graphql`
         query {
-          allTracksJson {
+          artists: allArtists(limit: 5) {
             edges {
               node {
-                lyrics
+                id
+                name
+                slug
+                image {
+                  src {
+                    childImageSharp {
+                      fluid(maxWidth: 220) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        sizes
+                      }
+                    }
+                  }
+                }
               }
             }
           }
         }
       `}
-      render={({ allTracksJson }) => {
+      render={({ artists }) => {
         return (
-          <div
-            style={{
-              whiteSpace: 'pre-line',
-            }}
-          >
-            {allTracksJson.edges.map(({ node }) => {
-              return node.lyrics;
-              // return node.lyrics.split("\n")
+          <HomeGrid>
+            {artists.edges.map(({ node: artist }) => {
+              return (
+                <Card
+                  title={artist.name}
+                  url={artist.slug}
+                  imageSrc={
+                    artist.image ? artist.image.src.childImageSharp.fluid : null
+                  }
+                />
+              );
             })}
-          </div>
+          </HomeGrid>
         );
       }}
-    /> */}
+    />
   </Layout>
 );
 

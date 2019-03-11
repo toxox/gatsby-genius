@@ -1,20 +1,20 @@
 [
   {
-    "id": "1",
-    "name": "Foals",
-    "slug": "foals",
+    "id": "4",
+    "name": "Alex Cameron",
+    "slug": "alex-cameron",
     "image": {
-      "src": "../cover-art/foals.jpg"
+      "src": "../cover-art/alex-cameron.jpg"
     },
     "tracks": [
       {
         "title": "a",
-        "slug": "testing1",
+        "slug": "testing3",
         "lyricsFile": "idles-television.md"
       },
       {
         "title": "b",
-        "slug": "testing2",
+        "slug": "testing4",
         "lyricsFile": "idles-television.md"
       }
     ]

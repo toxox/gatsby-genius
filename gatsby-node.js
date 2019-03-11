@@ -80,7 +80,6 @@ exports.createPages = async ({ graphql, actions }) => {
           component: path.resolve(`./src/templates/Track/index.js`),
           context: {
             artist,
-            track,
             track: {
               ...track,
               lyrics: lyrics.rawMarkdownBody,
