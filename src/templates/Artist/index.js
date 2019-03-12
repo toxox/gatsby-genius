@@ -16,6 +16,7 @@ export default ({ pageContext: { artist } }) => {
         {artist.tracks.map(track => {
           return (
             <Card
+              key={track.slug}
               title={track.title}
               url={`${artist.slug}/${track.slug}`}
               imageSrc={

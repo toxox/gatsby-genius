@@ -51,6 +51,7 @@ const Header = ({ siteTitle }) => (
           href="https://github.com/toxox/gatsby-genius"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Get source code"
         >
           <FaGithub size="1.15rem" />
         </a>

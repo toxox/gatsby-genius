@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
   "javascript.format.enable": false,
-  "emmet.includeLanguages": { "javascript": "javascriptreact" }
+  "emmet.includeLanguages": { "javascript": "javascriptreact" },
+  "files.eol": "\n"
 }

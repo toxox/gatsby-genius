@@ -10,7 +10,7 @@ const Container = styled.div`
 `;
 
 const Card = ({ imageSrc, title, subtitle, url = '/' }) => (
-  <Link to={url}>
+  <Link to={`/${url}`}>
     <Container>
       <Image src={imageSrc} />
       <h4>{title}</h4>

@@ -61,7 +61,7 @@ export default ({ pageContext: { artist, track } }) => {
         <PageCover
           image={track.coverArt}
           title={track.title}
-          subtitle={<Link to={artist.slug}>{artist.name}</Link>}
+          subtitle={<Link to={`/${artist.slug}`}>{artist.name}</Link>}
         />
         <TrackContainer>
           <div>{annotatedLyrics}</div>

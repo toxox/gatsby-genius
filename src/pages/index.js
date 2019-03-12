@@ -48,6 +48,7 @@ const IndexPage = () => (
               {artists.edges.map(({ node: artist }) => {
                 return (
                   <Card
+                    key={artist.id}
                     title={artist.name}
                     url={artist.slug}
                     imageSrc={
