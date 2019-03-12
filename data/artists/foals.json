@@ -18,7 +18,7 @@
         "annotations": [
           {
             "id": 1,
-            "range": "I see a mountain at my gates\r\nI see it more and more each day\r\nWhat I give, it takes away\r\nWhether I go or when I stay",
+            "range": "I see a mountain at my gates\nI see it more and more each day\nWhat I give, it takes away\nWhether I go or when I stay",
             "text": "Mountains are often used as a metaphor for extremely difficult issues that seem impossible to overcome. In this case, the mountain is forming at the gates signifying that the issues are impeding him from even starting his journey."
           },
           {
@@ -33,12 +33,12 @@
           },
           {
             "id": 4,
-            "range": "Oh, gimme some time\r\nShow me the foothold from which I can climb",
+            "range": "Oh, gimme some time\nShow me the foothold from which I can climb",
             "text": "The chorus contrasts the previous verses. He now wants to slow down the inevitability of his fate – wants to somehow have more time to take on whatever it is that is troubling him and climb the metaphorical mountain"
           },
           {
             "id": 5,
-            "range": "Dark clouds gather 'round\r\nWill I run or stand my ground?",
+            "range": "Dark clouds gather 'round\nWill I run or stand my ground?",
             "text": "His problems or challenges he is facing are intimidating and are closing in on him and it is now time for the “fight or flight” moment. He needs to act"
           }
         ]
@@ -59,12 +59,12 @@
           },
           {
             "id": 2,
-            "range": "Now that we're older, the future is colder\r\nBut what is there to do?",
+            "range": "Now that we're older, the future is colder\nBut what is there to do?",
             "text": "As you get older you get more to grips with the inevitability of the future. You begin to accept that there is nothing you can do to stop the progression of time, so you come to an almost calm acceptance."
           },
           {
             "id": 3,
-            "range": "And now our parents are long departed\r\nWho can finish the songs they started?",
+            "range": "And now our parents are long departed\nWho can finish the songs they started?",
             "text": "Everyone has their own ideas, beliefs and goals. We have but a life time to fulfill our desires and to do everything we truly want, so we must start the job as soon as possible, way before death arrives. If we fail, all we began to accomplish (the songs we started to sing) will most likely be thrown away. Hardly will there be anyone to keep this train going, since just like we have different ideas from our parents, the next generation will also have new goals, distanced from our own."
           }
         ]
@@ -80,17 +80,17 @@
         "annotations": [
           {
             "id": 1,
-            "range": "Now the sea eats the sky\r\nBut they say it's a lie",
+            "range": "Now the sea eats the sky\nBut they say it's a lie",
             "text": "The opening lines refer to climate change causing ocean levels to rise on the horizons of the Earth and mentions that there are still people who deny that it’s happening."
           },
           {
             "id": 2,
-            "range": "Oh, the weather's against us\r\nHouses underground\r\nThe flowers upside down\r\nIn our dreams\r\n",
+            "range": "Oh, the weather's against us\nHouses underground\nThe flowers upside down\nIn our dreams\n",
             "text": "As you get older you get more to grips with the inevitability of the future. You begin to accept that there is nothing you can do to stop the progression of time, so you come to an almost calm acceptance."
           },
           {
             "id": 3,
-            "range": "'Cause they watch us in sleep\r\nThe language that we speak\r\nAnd the secrets that we keep",
+            "range": "'Cause they watch us in sleep\nThe language that we speak\nAnd the secrets that we keep",
             "text": "When the song debuted Yannis was briefly interviewed on BBC Radio 1. He told host Annie Mac that one of the things that trouble him about the world right now is the unprecedented threat of surveillance. People are warned to clear their browsers and be cautious about what they share and store online. We currently live in an age where transferring information is easier than ever and this has brought with it new threats to privacy. In the world that “Exits” takes place in this has reached an Orwellian level. The only place that that a secret can exist anymore is in a person’s own mind."
           }
         ]

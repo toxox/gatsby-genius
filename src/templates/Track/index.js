@@ -64,7 +64,6 @@ export default ({ pageContext: { artist, track } }) => {
           subtitle={<Link to={artist.slug}>{artist.name}</Link>}
         />
         <TrackContainer>
-          <div>{JSON.stringify(lyrics, null, 2)}</div>
           <div>{annotatedLyrics}</div>
           {annotation.id ? (
             <AnnotationPanel

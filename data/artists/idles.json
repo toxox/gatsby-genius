@@ -20,7 +20,7 @@
           },
           {
             "id": 2,
-            "range": "I am my father's son\r\nHis shadow weighs a tonne",
+            "range": "I am my father's son\nHis shadow weighs a tonne",
             "text": "Joe details his relationship with his father in an interview with GlasgowLive. Joe talks about his father – sculptor Nigel Talbot – in a positive manner, despite what this line insinuates."
           },
           {
@@ -42,7 +42,7 @@
         "annotations": [
           {
             "id": 1,
-            "range": "I go outside and I feel free\r\n'Cause I smash mirrors and fuck TV",
+            "range": "I go outside and I feel free\n'Cause I smash mirrors and fuck TV",
             "text": "test annotation goes and it goes and it goes"
           },
           {
