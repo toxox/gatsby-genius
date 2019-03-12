@@ -8,14 +8,92 @@
     },
     "tracks": [
       {
-        "title": "a",
-        "slug": "testing1",
-        "lyricsFile": "idles-television.md"
+        "title": "Mountain at My Gates",
+        "slug": "mountain-at-my-gates",
+        "description": "The second single for Foals‘ fourth album, What Went Down",
+        "image": {
+          "src": "../cover-art/foals-what-went-down.jpg"
+        },
+        "lyricsFile": "foals-mountain-at-my-gates.md",
+        "annotations": [
+          {
+            "id": 1,
+            "range": "I see a mountain at my gates\r\nI see it more and more each day\r\nWhat I give, it takes away\r\nWhether I go or when I stay",
+            "text": "Mountains are often used as a metaphor for extremely difficult issues that seem impossible to overcome. In this case, the mountain is forming at the gates signifying that the issues are impeding him from even starting his journey."
+          },
+          {
+            "id": 2,
+            "range": "I see a fire out by the lake",
+            "text": "The gates in this verse are a metaphor for the gates of heaven. He sees the lake of fire from Revelation on his journey to face this mountain keeping himself from heaven."
+          },
+          {
+            "id": 3,
+            "range": "I'll drive my car without the brakes",
+            "text": "This line could be saying he has lost hope: he is driving the car without the brakes because he doesn’t care about the consequences of crashing."
+          },
+          {
+            "id": 4,
+            "range": "Oh, gimme some time\r\nShow me the foothold from which I can climb",
+            "text": "The chorus contrasts the previous verses. He now wants to slow down the inevitability of his fate – wants to somehow have more time to take on whatever it is that is troubling him and climb the metaphorical mountain"
+          },
+          {
+            "id": 5,
+            "range": "Dark clouds gather 'round\r\nWill I run or stand my ground?",
+            "text": "His problems or challenges he is facing are intimidating and are closing in on him and it is now time for the “fight or flight” moment. He needs to act"
+          }
+        ]
       },
       {
-        "title": "b",
-        "slug": "testing2",
-        "lyricsFile": "idles-television.md"
+        "title": "A Knife in the Ocean",
+        "slug": "a-knife-in-the-ocean",
+        "description": "The third single released by Foals in anticipation of their fourth studio album What Went Down, “A Knife In The Ocean” premiered on Apple Music’s Beats 1 Radio on August 6th, 2015.",
+        "image": {
+          "src": "../cover-art/foals-what-went-down.jpg"
+        },
+        "lyricsFile": "foals-a-knife-in-the-ocean.md",
+        "annotations": [
+          {
+            "id": 1,
+            "range": "Watch your P's and Q's",
+            "text": "This axiom, regardless of its origins, has been common in post-victorian Britain as an abbreviation of ‘to mind your manners’ or, more specifically, to say both ‘please’ (p’s) and ‘thankyou’ (thank-Q).\n\nThus the phrase ‘watch your p’s and q’s’ has been in use to encourage people to speak politely, especially children, who remember such phrases better than just instructions."
+          },
+          {
+            "id": 2,
+            "range": "Now that we're older, the future is colder\r\nBut what is there to do?",
+            "text": "As you get older you get more to grips with the inevitability of the future. You begin to accept that there is nothing you can do to stop the progression of time, so you come to an almost calm acceptance."
+          },
+          {
+            "id": 3,
+            "range": "And now our parents are long departed\r\nWho can finish the songs they started?",
+            "text": "Everyone has their own ideas, beliefs and goals. We have but a life time to fulfill our desires and to do everything we truly want, so we must start the job as soon as possible, way before death arrives. If we fail, all we began to accomplish (the songs we started to sing) will most likely be thrown away. Hardly will there be anyone to keep this train going, since just like we have different ideas from our parents, the next generation will also have new goals, distanced from our own."
+          }
+        ]
+      },
+      {
+        "title": "Exits",
+        "slug": "exits",
+        "description": "The lead single from Foals‘ “Everything Not Saved Will Be Lost Part 1“ arrived shortly after the album was announced.",
+        "image": {
+          "src": "../cover-art/foals-exits.jpg"
+        },
+        "lyricsFile": "foals-exits.md",
+        "annotations": [
+          {
+            "id": 1,
+            "range": "Now the sea eats the sky\r\nBut they say it's a lie",
+            "text": "The opening lines refer to climate change causing ocean levels to rise on the horizons of the Earth and mentions that there are still people who deny that it’s happening."
+          },
+          {
+            "id": 2,
+            "range": "Oh, the weather's against us\r\nHouses underground\r\nThe flowers upside down\r\nIn our dreams\r\n",
+            "text": "As you get older you get more to grips with the inevitability of the future. You begin to accept that there is nothing you can do to stop the progression of time, so you come to an almost calm acceptance."
+          },
+          {
+            "id": 3,
+            "range": "'Cause they watch us in sleep\r\nThe language that we speak\r\nAnd the secrets that we keep",
+            "text": "When the song debuted Yannis was briefly interviewed on BBC Radio 1. He told host Annie Mac that one of the things that trouble him about the world right now is the unprecedented threat of surveillance. People are warned to clear their browsers and be cautious about what they share and store online. We currently live in an age where transferring information is easier than ever and this has brought with it new threats to privacy. In the world that “Exits” takes place in this has reached an Orwellian level. The only place that that a secret can exist anymore is in a person’s own mind."
+          }
+        ]
       }
     ]
   }

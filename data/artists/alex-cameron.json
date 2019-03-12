@@ -8,14 +8,30 @@
     },
     "tracks": [
       {
-        "title": "a",
-        "slug": "testing3",
-        "lyricsFile": "idles-television.md"
-      },
-      {
-        "title": "b",
-        "slug": "testing4",
-        "lyricsFile": "idles-television.md"
+        "title": "Candy May",
+        "slug": "candy-may",
+        "description": "The opener to “Forced Witness” tells the story of a man, presumably Alex, who is in an abusive relationship with a woman named Candy May. He is deeply in love with May, and takes her abuse as an expression of her extreme affection.",
+        "image": {
+          "src": "../cover-art/alex-cameron.jpg"
+        },
+        "lyricsFile": "alex-cameron-candy-may.md",
+        "annotations": [
+          {
+            "id": 1,
+            "range": "She has seen me naked, she knows I'm packing heat",
+            "text": "In most cases, “packing heat” is a slang term meaning to carry a firearm. Here, however, it is being used as a euphemism to imply that the narrator has a large penis."
+          },
+          {
+            "id": 2,
+            "range": "So I live with a deep regret\r\nOf all I do on the internet",
+            "text": "Alex feels regret for all of the shameful things he does on the internet: watching pornography and even using dating chatrooms. What makes it worse is that he is keeping these secrets from his sweet, sweet Candy May.\n\nThis is a common theme explored throughout Forced Witness. He goes into more depth regarding this concept in the 5th track: “True Lies”."
+          },
+          {
+            "id": 3,
+            "range": "You call it as you see it, you think you know the score\r\nBut you just never had a girl like Candy May before",
+            "text": "People judge his relationship and probably try to advise him to leave Candy May, but he believes that they just don’t understand the type of woman that Candy May is."
+          }
+        ]
       }
     ]
   }
