@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 
-import SEO from '../components/seo';
+import SEO from '../common/SEO';
 import Layout from '../common/Layout';
 import Grid from '../common/Grid';
 import Card from '../common/Card';
@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Gatsby Genius" keywords={[`gatsby`, `genius`, `lyrics`]} />
     <StaticQuery
       query={graphql`
         query {

@@ -4,6 +4,7 @@ import reactStringReplace from 'react-string-replace';
 import styled from '@emotion/styled';
 
 import Layout from '../../common/Layout';
+import SEO from '../../common/SEO';
 import PageCover from '../../common/PageCover';
 import AnnotationMark from './components/AnnotationMark';
 import AnnotationPanel from './components/AnnotationPanel';
@@ -58,6 +59,10 @@ export default ({ pageContext: { artist, track } }) => {
           whiteSpace: 'pre-line',
         }}
       >
+        <SEO
+          title={`${track.title} by ${artist.name} Lyrics`}
+          keywords={[track.title, artist.name, `lyrics`]}
+        />
         <PageCover
           image={track.coverArt}
           title={track.title}

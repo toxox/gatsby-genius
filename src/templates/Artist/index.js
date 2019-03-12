@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Layout from '../../common/Layout';
+import SEO from '../../common/SEO';
 import PageCover from '../../common/PageCover';
 import Grid from '../../common/Grid';
 import Card from '../../common/Card';
@@ -8,6 +9,7 @@ import Card from '../../common/Card';
 export default ({ pageContext: { artist } }) => {
   return (
     <Layout>
+      <SEO title={`${artist.name} Lyrics`} keywords={[artist.name, `lyrics`]} />
       <PageCover
         image={artist.image ? artist.image.src.childImageSharp.fluid : null}
         title={artist.name}
