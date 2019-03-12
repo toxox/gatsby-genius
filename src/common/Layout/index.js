@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 
-import Header from './header';
+import Header from '../Header';
 import './layout.css';
 
 const Wrapper = styled.div`
   width: 100%;
+  height: 100%;
   background: #f7f7f7;
 `;
 

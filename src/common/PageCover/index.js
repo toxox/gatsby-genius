@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
 
-import Image from '../../../../common/Image';
-import theme from '../../../../utils/theme';
+import Image from '../Image';
+import theme from '../../utils/theme';
 
 const Wrapper = styled.div`
   background: #1e1e1e;
@@ -35,20 +34,18 @@ const TitleContainer = styled.div`
   }
 `;
 
-const TrackHeader = ({ coverArt, track, artist }) => {
+const PageCover = ({ image, title, subtitle }) => {
   return (
     <Wrapper>
       <Container>
-        <Image src={coverArt} />
+        <Image src={image} />
         <TitleContainer>
-          <h2>{track.title}</h2>
-          <h3>
-            <Link to={artist.slug}>{artist.name}</Link>
-          </h3>
+          <h2>{title}</h2>
+          {subtitle && <h3>{subtitle}</h3>}
         </TitleContainer>
       </Container>
     </Wrapper>
   );
 };
 
-export default TrackHeader;
+export default PageCover;

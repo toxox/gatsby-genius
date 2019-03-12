@@ -13,12 +13,37 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             name
             slug
+            image {
+              src {
+                childImageSharp {
+                  fluid(maxWidth: 220, quality: 90) {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                  }
+                }
+              }
+            }
             tracks {
               slug
               title
               description
               lyricsFile
-              coverArtFile
+              image {
+                src {
+                  childImageSharp {
+                    fluid(maxWidth: 220, quality: 90) {
+                      base64
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
+                  }
+                }
+              }
               annotations {
                 id
                 range
@@ -36,7 +61,7 @@ exports.createPages = async ({ graphql, actions }) => {
     pagePromises.push(
       await createPage({
         path: artist.slug,
-        component: path.resolve(`./src/templates/artist.js`),
+        component: path.resolve(`./src/templates/Artist/index.js`),
         context: {
           artist,
         },
@@ -45,24 +70,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
     artist.tracks.forEach(async track => {
       const {
-        data: { lyrics, coverArt },
+        data: { lyrics },
       } = await graphql(
         `
-          query($lyricsPath: String, $coverArtFileName: String) {
+          query($lyricsPath: String) {
             lyrics: markdownRemark(fileAbsolutePath: { eq: $lyricsPath }) {
               rawMarkdownBody
-            }
-
-            coverArt: file(relativePath: { eq: $coverArtFileName }) {
-              childImageSharp {
-                fluid(maxWidth: 220) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-                }
-              }
             }
           }
         `,
@@ -70,7 +83,6 @@ exports.createPages = async ({ graphql, actions }) => {
           lyricsPath: `${__dirname.replace(/\\/g, '/')}/data/lyrics/${
             track.lyricsFile
           }`,
-          coverArtFileName: track.coverArtFile,
         }
       );
 
@@ -83,7 +95,9 @@ exports.createPages = async ({ graphql, actions }) => {
             track: {
               ...track,
               lyrics: lyrics.rawMarkdownBody,
-              coverArt: coverArt ? coverArt.childImageSharp.fluid : null,
+              coverArt: track.image
+                ? track.image.src.childImageSharp.fluid
+                : null,
             },
           },
         })

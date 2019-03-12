@@ -8,7 +8,9 @@
         "title": "Colossus",
         "slug": "colossus",
         "description": "“Colossus” is the first piece of music since 2017’s praised debut album Brutalism by the Bristol post punk five-piece IDLES.\n\nThe song is the first single from their second album, Joy as an Act of Resistance.",
-        "coverArtFile": "idles-colossus.jpg",
+        "image": {
+          "src": "../cover-art/idles-colossus.jpg"
+        },
         "lyricsFile": "idles-colossus.md",
         "annotations": [
           {

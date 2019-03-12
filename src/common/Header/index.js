@@ -4,7 +4,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { FaGithub } from 'react-icons/fa';
 
-import theme from '../utils/theme';
+import theme from '../../utils/theme';
 
 const LogoContainer = styled.div`
   background: ${theme.primaryColor};

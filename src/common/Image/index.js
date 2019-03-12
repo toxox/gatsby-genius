@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticQuery } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 const Image = ({ src }) => {
@@ -23,7 +23,7 @@ const Image = ({ src }) => {
             relativePath: { eq: "default-cover-image.png" }
           ) {
             childImageSharp {
-              fluid(maxWidth: 220) {
+              fluid(maxWidth: 220, quality: 90) {
                 ...GatsbyImageSharpFluid
               }
             }

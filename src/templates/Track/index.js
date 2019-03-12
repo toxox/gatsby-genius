@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
 import reactStringReplace from 'react-string-replace';
 import styled from '@emotion/styled';
 
-import Layout from '../../components/layout';
+import Layout from '../../common/Layout';
+import PageCover from '../../common/PageCover';
 import AnnotationMark from './components/AnnotationMark';
 import AnnotationPanel from './components/AnnotationPanel';
-import TrackHeader from './components/TrackHeader';
 
 const TrackContainer = styled.div`
   padding-top: 1rem;
@@ -23,7 +24,7 @@ export default ({ pageContext: { artist, track } }) => {
     };
   });
 
-  const { lyrics, title, annotations } = track;
+  const { lyrics, annotations } = track;
 
   let annotatedLyrics = lyrics;
   annotations.forEach(({ range, id }) => {
@@ -57,7 +58,11 @@ export default ({ pageContext: { artist, track } }) => {
           whiteSpace: 'pre-line',
         }}
       >
-        <TrackHeader coverArt={track.coverArt} track={track} artist={artist} />
+        <PageCover
+          image={track.coverArt}
+          title={track.title}
+          subtitle={<Link to={artist.slug}>{artist.name}</Link>}
+        />
         <TrackContainer>
           <div>{annotatedLyrics}</div>
           {annotation.id ? (
