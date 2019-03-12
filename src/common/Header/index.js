@@ -47,7 +47,11 @@ const Header = ({ siteTitle }) => (
         <Link to="/">Home</Link>
       </MenuLink>
       <MenuLink>
-        <a href="https://github.com/toxox/gatsby-genius" target="_blank">
+        <a
+          href="https://github.com/toxox/gatsby-genius"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaGithub size="1.15rem" />
         </a>
       </MenuLink>

@@ -5,6 +5,7 @@ import theme from '../../../../utils/theme';
 const Mark = styled.span`
   background-color: ${({ selected }) =>
     selected ? theme.primaryColor : '#e9e9e9'};
+  cursor: pointer;
   &:hover {
     background-color: ${theme.primaryColor};
   }

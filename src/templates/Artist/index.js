@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
 
 import Layout from '../../common/Layout';
 import PageCover from '../../common/PageCover';
