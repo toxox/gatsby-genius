@@ -13,7 +13,7 @@ const Mark = styled.span`
 
 const AnnotationMark = props => {
   return (
-    <Mark data-annotation-mark {...props}>
+    <Mark data-annotation-mark data-testid="annotation-mark" {...props}>
       {props.children}
     </Mark>
   );
