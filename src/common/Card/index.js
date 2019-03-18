@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import Image from '../Image';
+import { ImagePropType } from '../../utils/customPropTypes';
 
 const Container = styled.div`
   display: grid;
@@ -21,10 +22,15 @@ const Card = ({ imageSrc, title, subtitle, url = '/' }) => (
 );
 
 Card.propTypes = {
-  imageSrc: PropTypes.number.isRequired,
+  imageSrc: ImagePropType,
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   url: PropTypes.string.isRequired,
+};
+
+Card.defaultProps = {
+  imageSrc: null,
+  subtitle: null,
 };
 
 export default Card;

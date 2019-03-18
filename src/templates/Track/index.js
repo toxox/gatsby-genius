@@ -9,6 +9,7 @@ import SEO from '../../common/SEO';
 import PageCover from '../../common/PageCover';
 import AnnotationMark from './components/AnnotationMark';
 import AnnotationPanel from './components/AnnotationPanel';
+import { ArtistPropType, TrackPropType } from '../../utils/customPropTypes';
 
 const TrackContainer = styled.div`
   padding-top: 1rem;
@@ -87,8 +88,8 @@ const TrackPageTemplate = ({ pageContext: { artist, track } }) => {
 
 TrackPageTemplate.propTypes = {
   pageContext: PropTypes.shape({
-    artist: PropTypes.number,
-    track: PropTypes.number,
+    artist: ArtistPropType,
+    track: TrackPropType,
   }).isRequired,
 };
 

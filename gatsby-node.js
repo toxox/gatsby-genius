@@ -56,19 +56,22 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  let pagePromises = [];
+  const pagePromises = [];
   allArtists.edges.forEach(async ({ node: artist }) => {
+    const artistNode = {
+      ...artist,
+      image: artist.image ? artist.image.src.childImageSharp.fluid : null,
+    };
     pagePromises.push(
       await createPage({
-        path: artist.slug,
+        path: artistNode.slug,
         component: path.resolve(`./src/templates/Artist/index.js`),
         context: {
-          artist,
+          artist: artistNode,
         },
       })
     );
-
-    artist.tracks.forEach(async track => {
+    artistNode.tracks.forEach(async track => {
       const {
         data: { lyrics },
       } = await graphql(
@@ -85,13 +88,12 @@ exports.createPages = async ({ graphql, actions }) => {
           }`,
         }
       );
-
       pagePromises.push(
         await createPage({
-          path: `${artist.slug}/${track.slug}`,
+          path: `${artistNode.slug}/${track.slug}`,
           component: path.resolve(`./src/templates/Track/index.js`),
           context: {
-            artist,
+            artist: artistNode,
             track: {
               ...track,
               lyrics: lyrics.rawMarkdownBody,

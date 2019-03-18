@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 
 import Image from '../Image';
 import theme from '../../utils/theme';
+import { ImagePropType } from '../../utils/customPropTypes';
 
 const Wrapper = styled.div`
   background: #1e1e1e;
@@ -50,9 +51,14 @@ const PageCover = ({ image, title, subtitle }) => {
 };
 
 PageCover.propTypes = {
-  image: PropTypes.number.isRequired,
+  image: ImagePropType,
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+};
+
+PageCover.defaultProps = {
+  image: null,
+  subtitle: null,
 };
 
 export default PageCover;

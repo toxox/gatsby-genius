@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { ImagePropType } from '../../utils/customPropTypes';
 
 const Image = ({ src }) => {
   if (src) {
@@ -45,7 +45,11 @@ const Image = ({ src }) => {
 };
 
 Image.propTypes = {
-  src: PropTypes.number.isRequired,
+  src: ImagePropType,
+};
+
+Image.defaultProps = {
+  src: null,
 };
 
 export default Image;

@@ -6,15 +6,13 @@ import SEO from '../../common/SEO';
 import PageCover from '../../common/PageCover';
 import Grid from '../../common/Grid';
 import Card from '../../common/Card';
+import { ArtistPropType } from '../../utils/customPropTypes';
 
 const ArtistPageTemplate = ({ pageContext: { artist } }) => {
   return (
     <Layout>
       <SEO title={`${artist.name} Lyrics`} keywords={[artist.name, `lyrics`]} />
-      <PageCover
-        image={artist.image ? artist.image.src.childImageSharp.fluid : null}
-        title={artist.name}
-      />
+      <PageCover image={artist.image} title={artist.name} />
       <Grid>
         {artist.tracks.map(track => {
           return (
@@ -35,7 +33,7 @@ const ArtistPageTemplate = ({ pageContext: { artist } }) => {
 
 ArtistPageTemplate.propTypes = {
   pageContext: PropTypes.shape({
-    artist: PropTypes.number,
+    artist: ArtistPropType,
   }).isRequired,
 };
 
