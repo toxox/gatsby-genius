@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { useSpring, animated } from 'react-spring';
 
@@ -23,6 +24,11 @@ const AnnotationPanel = ({ text, offset }) => {
       {text}
     </Panel>
   );
+};
+
+AnnotationPanel.propTypes = {
+  text: PropTypes.string.isRequired,
+  offset: PropTypes.number.isRequired,
 };
 
 export default AnnotationPanel;

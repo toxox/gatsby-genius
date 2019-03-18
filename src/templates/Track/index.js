@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import reactStringReplace from 'react-string-replace';
 import styled from '@emotion/styled';
@@ -15,7 +16,7 @@ const TrackContainer = styled.div`
   grid-template-columns: 1fr 1fr;
 `;
 
-export default ({ pageContext: { artist, track } }) => {
+const TrackPageTemplate = ({ pageContext: { artist, track } }) => {
   const [annotation, setAnnotation] = useState({ id: null, offset: 0 });
 
   useEffect(() => {
@@ -36,7 +37,7 @@ export default ({ pageContext: { artist, track } }) => {
           selected={annotation.id === id}
           onClick={e => {
             if (annotation.id === id) return;
-            setAnnotation({ id: id, offset: e.nativeEvent.offsetY });
+            setAnnotation({ id, offset: e.nativeEvent.offsetY });
           }}
         >
           {range}
@@ -83,3 +84,12 @@ export default ({ pageContext: { artist, track } }) => {
     </Layout>
   );
 };
+
+TrackPageTemplate.propTypes = {
+  pageContext: PropTypes.shape({
+    artist: PropTypes.number,
+    track: PropTypes.number,
+  }).isRequired,
+};
+
+export default TrackPageTemplate;

@@ -81,18 +81,19 @@ function SEO({ description, lang, meta, keywords, title }) {
   );
 }
 
+SEO.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.string),
+  keywords: PropTypes.arrayOf(PropTypes.string),
+  title: PropTypes.string.isRequired,
+};
+
 SEO.defaultProps = {
   lang: `en-US`,
   meta: [],
   keywords: [],
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
+  description: null,
 };
 
 export default SEO;

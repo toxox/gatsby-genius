@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
 import Image from '../Image';
@@ -46,6 +47,12 @@ const PageCover = ({ image, title, subtitle }) => {
       </Container>
     </Wrapper>
   );
+};
+
+PageCover.propTypes = {
+  image: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
 };
 
 export default PageCover;

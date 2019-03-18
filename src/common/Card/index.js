@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import Image from '../Image';
@@ -18,5 +19,12 @@ const Card = ({ imageSrc, title, subtitle, url = '/' }) => (
     </Container>
   </Link>
 );
+
+Card.propTypes = {
+  imageSrc: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
 
 export default Card;

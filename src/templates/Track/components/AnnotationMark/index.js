@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import theme from '../../../../utils/theme';
 
@@ -11,12 +12,23 @@ const Mark = styled.span`
   }
 `;
 
-const AnnotationMark = props => {
+const AnnotationMark = ({ children, onClick, selected }) => {
   return (
-    <Mark data-annotation-mark data-testid="annotation-mark" {...props}>
-      {props.children}
+    <Mark
+      data-annotation-mark
+      data-testid="annotation-mark"
+      onClick={onClick}
+      selected={selected}
+    >
+      {children}
     </Mark>
   );
+};
+
+AnnotationMark.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired,
+  selected: PropTypes.bool.isRequired,
 };
 
 export default AnnotationMark;
