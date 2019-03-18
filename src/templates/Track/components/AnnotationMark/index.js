@@ -20,7 +20,6 @@ const AnnotationMark = ({ children, onClick, selected }) => {
       onClick={onClick}
       selected={selected}
     >
-      {selected ? 'true' : 'false'}
       {children}
     </Mark>
   );

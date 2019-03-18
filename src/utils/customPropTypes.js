@@ -20,6 +20,7 @@ export const TrackPropType = PropTypes.shape({
   lyrics: PropTypes.string,
   slug: PropTypes.string,
   title: PropTypes.string,
+  annotations: PropTypes.arrayOf(AnnotationPropType),
 });
 
 export const ArtistPropType = PropTypes.shape({
