@@ -20,7 +20,12 @@ const AnnotationPanel = ({ text, offset }) => {
     from: { opacity: 0, left: 50 },
   });
   return (
-    <Panel data-annotation-panel offset={offset} style={spring}>
+    <Panel
+      data-annotation-panel
+      data-testid="annotation-panel"
+      offset={offset}
+      style={spring}
+    >
       {text}
     </Panel>
   );
@@ -28,7 +33,11 @@ const AnnotationPanel = ({ text, offset }) => {
 
 AnnotationPanel.propTypes = {
   text: PropTypes.string.isRequired,
-  offset: PropTypes.number.isRequired,
+  offset: PropTypes.number,
+};
+
+AnnotationPanel.defaultProps = {
+  offset: 0,
 };
 
 export default AnnotationPanel;

@@ -20,6 +20,7 @@ const AnnotationMark = ({ children, onClick, selected }) => {
       onClick={onClick}
       selected={selected}
     >
+      {selected ? 'true' : 'false'}
       {children}
     </Mark>
   );
@@ -27,8 +28,13 @@ const AnnotationMark = ({ children, onClick, selected }) => {
 
 AnnotationMark.propTypes = {
   children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired,
-  selected: PropTypes.bool.isRequired,
+  onClick: PropTypes.func,
+  selected: PropTypes.bool,
+};
+
+AnnotationMark.defaultProps = {
+  onClick: () => {},
+  selected: false,
 };
 
 export default AnnotationMark;
