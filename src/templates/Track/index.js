@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-import Layout from '../../common/Layout';
 import SEO from '../../common/SEO';
 import PageCover from '../../common/PageCover';
 import Lyrics from './components/Lyrics';
@@ -10,7 +9,7 @@ import { ArtistPropType, TrackPropType } from '../../utils/customPropTypes';
 
 const TrackPageTemplate = ({ pageContext: { artist, track } }) => {
   return (
-    <Layout>
+    <>
       <div
         style={{
           whiteSpace: 'pre-line',
@@ -27,7 +26,7 @@ const TrackPageTemplate = ({ pageContext: { artist, track } }) => {
         />
         <Lyrics track={track} />
       </div>
-    </Layout>
+    </>
   );
 };
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Layout from '../../common/Layout';
 import SEO from '../../common/SEO';
 import PageCover from '../../common/PageCover';
 import Grid from '../../common/Grid';
@@ -10,7 +9,7 @@ import { ArtistPropType } from '../../utils/customPropTypes';
 
 const ArtistPageTemplate = ({ pageContext: { artist } }) => {
   return (
-    <Layout>
+    <>
       <SEO title={`${artist.name} Lyrics`} keywords={[artist.name, `lyrics`]} />
       <PageCover image={artist.image} title={artist.name} />
       <Grid>
@@ -27,7 +26,7 @@ const ArtistPageTemplate = ({ pageContext: { artist } }) => {
           );
         })}
       </Grid>
-    </Layout>
+    </>
   );
 };
 

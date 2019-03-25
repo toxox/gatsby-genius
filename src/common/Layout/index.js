@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 
 import Header from '../Header';
+import Transition from '../Transition';
 import './layout.css';
 
 const Wrapper = styled.div`
@@ -19,7 +20,7 @@ const Content = styled.div`
   background: #ffffff;
 `;
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -33,9 +34,11 @@ const Layout = ({ children }) => (
     render={data => (
       <Wrapper>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <Content>
-          <main>{children}</main>
-        </Content>
+        <Transition location={location}>
+          <Content>
+            <main>{children}</main>
+          </Content>
+        </Transition>
       </Wrapper>
     )}
   />
@@ -43,6 +46,9 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }).isRequired,
 };
 
 export default Layout;

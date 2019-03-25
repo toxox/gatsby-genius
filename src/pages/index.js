@@ -3,7 +3,6 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 
 import SEO from '../common/SEO';
-import Layout from '../common/Layout';
 import Grid from '../common/Grid';
 import Card from '../common/Card';
 
@@ -12,7 +11,7 @@ const Container = styled.div`
 `;
 
 const IndexPage = () => (
-  <Layout>
+  <>
     <SEO title="Gatsby Genius" keywords={[`gatsby`, `genius`, `lyrics`]} />
     <StaticQuery
       query={graphql`
@@ -64,7 +63,7 @@ const IndexPage = () => (
         );
       }}
     />
-  </Layout>
+  </>
 );
 
 export default IndexPage;
